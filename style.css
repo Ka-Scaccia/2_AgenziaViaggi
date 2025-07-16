@@ -6,6 +6,10 @@
   list-style-type: none;
   text-decoration: none;
 }
+/* body */ 
+body {
+  background-color: whitesmoke;
+}
 /* header */
 header {
   background-color: #ffe91f;
@@ -17,10 +21,11 @@ header {
   flex-direction: row;
   gap: 20px;
   justify-content: space-around;
+  z-index: 3;
 }
 header h1,
 header ul li {
- font-weight: 400;
+  font-weight: 400;
 }
 header h1 {
   font-size: 34px;
@@ -55,9 +60,9 @@ header ul li {
   text-transform: uppercase;
 }
 header ul li a {
-    color: black;
-    transition: 0.15s ease-in-out;
-    position: relative;
+  color: black;
+  transition: 0.15s ease-in-out;
+  position: relative;
 }
 header ul li a::after {
   /* linea sotto ai link */
@@ -120,4 +125,55 @@ header ul li a:hover:after {
 }
 #check {
   display: none;
+}
+/* destinazioni */
+.destinazioni {
+  margin-top: 140px;
+}
+.destinazioni .contenitore {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 140px;
+  overflow: hidden;
+  gap: 40px;
+}
+.destinazioni .contenitore .box img,
+.destinazioni .contenitore .box .riquadro {
+  border-radius: 16px;
+}
+.destinazioni .contenitore .box img {
+  width: 100%;
+}
+.destinazioni .contenitore .box .riquadro {
+  position: absolute;
+  bottom: 4px;
+  background-color: black;
+  padding: 20px;
+}
+.destinazioni .contenitore .box .riquadro.Roma {
+  bottom: 14px;
+  left: 1px;
+}
+.destinazioni .contenitore .box .riquadro h2,
+.destinazioni .contenitore .box .riquadro p,
+.destinazioni .contenitore .box .riquadro span a {
+  color: white;
+  margin: 18px 0;
+}
+.destinazioni .contenitore .box .riquadro h2 {
+  font-size: 74px;
+}
+.destinazioni .contenitore .box .riquadro p {
+  font-size: 20px;
+}
+.destinazioni .contenitore .box .riquadro span {
+  border: 4px white solid;
+  padding: 4px 8px;
+}
+.destinazioni .contenitore .box .riquadro span a {
+  font-size: 16px;
+  margin-right: 6px;
 }
