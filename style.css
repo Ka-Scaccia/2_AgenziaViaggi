@@ -6,9 +6,17 @@
   list-style-type: none;
   text-decoration: none;
 }
-/* body */ 
+/* body */
 body {
   background-color: whitesmoke;
+}
+/* img */
+img {
+  border: 3px solid transparent;
+}
+img:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 /* header */
 header {
@@ -149,7 +157,7 @@ header ul li a:hover:after {
 }
 .destinazioni .contenitore .box .riquadro {
   position: absolute;
-  bottom: 4px;
+  bottom: 8px;
   background-color: black;
   padding: 20px;
 }
