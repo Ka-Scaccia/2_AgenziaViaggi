@@ -25,9 +25,30 @@ header ul li {
 header h1 {
   font-size: 34px;
 }
+@media screen and (min-width: 320px) {
+  header h1 {
+    font-size: 24px;
+  }
+}
 header ul {
   display: flex;
   flex-direction: row;
+}
+@media screen and (min-width: 320px) {
+  header .menu-pc {
+    display: none;
+  }
+  header .menu-mobile {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .menu-pc {
+    display: flex;
+  }
+  header .menu-mobile {
+    display: none;
+  }
 }
 header ul li {
   margin: 0 20px;
@@ -52,4 +73,51 @@ header ul li a::after {
 
 header ul li a:hover:after {
   width: 100%;
+}
+/* menu mobile */
+.menu-mobile {
+  display: none;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 100;
+  background-color: #ffe91f;
+  transition: all 0.2s ease-in-out;
+}
+.menu li {
+  margin-top: 40px;
+}
+.menu li a {
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.menu .close-menu,
+.menu .open-menu,
+.fa-bars,
+.fa-navicon {
+  margin: 4px;
+  font-size: 24px;
+}
+.close-menu {
+  transform: translateY(40px);
+}
+#check:checked ~ .menu {
+  right: 0;
+}
+#check {
+  display: none;
 }
