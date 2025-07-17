@@ -140,7 +140,7 @@ header ul li a:hover:after {
   display: none;
 }
 /* destinazioni */
-.destinazioni {
+.destinazioni.first {
   margin-top: 140px;
 }
 .destinazioni {
@@ -175,6 +175,7 @@ header ul li a:hover:after {
   .destinazioni {
     flex-direction: row;
     flex-wrap: nowrap;
+    margin: 20px 80px;
   }
 }
 .destinazioni .box img,
@@ -191,17 +192,16 @@ header ul li a:hover:after {
     border-top-right-radius: 16px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .destinazioni .box img,
+  .destinazioni .box .riquadro {
+    border-radius: 16px;
+  }
+}
 .destinazioni .box img {
   width: 100%;
 }
-/* @media screen and (min-width: 320px) {
-  .destinazioni .box img {
-    width: 50%;
-  }
-} */
 .destinazioni .box .riquadro {
-  position: absolute;
-  bottom: 8px;
   background-color: black;
   padding: 20px;
 }
@@ -214,9 +214,18 @@ header ul li a:hover:after {
     left: 0;
   }
 }
-.destinazioni .box .riquadro.Roma {
-  bottom: 14px;
-  left: 1px;
+@media screen and (min-width: 1024px) {
+  .destinazioni .box .riquadro {
+    position: relative;
+    bottom: 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .destinazioni .box .riquadro.Roma {
+    position: relative;
+    bottom: 84px;
+    left: 1px;
+  }
 }
 .destinazioni .box .riquadro h2,
 .destinazioni .box .riquadro p,
@@ -230,6 +239,9 @@ header ul li a:hover:after {
   .destinazioni .box .riquadro span a {
     margin: 14px 0;
   }
+}
+.destinazioni .box .riquadro span:hover {
+  cursor: pointer;
 }
 .destinazioni .box .riquadro h2 {
   font-size: 74px;
