@@ -14,6 +14,11 @@ body {
 img {
   border: 3px solid transparent;
 }
+@media screen and (min-width: 320px) {
+  img {
+    border: none;
+  }
+}
 img:hover {
   cursor: pointer;
   opacity: 0.7;
@@ -138,7 +143,7 @@ header ul li a:hover:after {
 .destinazioni {
   margin-top: 140px;
 }
-.destinazioni .contenitore {
+.destinazioni {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -148,40 +153,106 @@ header ul li a:hover:after {
   overflow: hidden;
   gap: 40px;
 }
-.destinazioni .contenitore .box img,
-.destinazioni .contenitore .box .riquadro {
+@media screen and (min-width: 320px) {
+  .destinazioni {
+    flex-direction: column;
+    margin: 140px 20px 20px 20px;
+  }
+  .destinazioni .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .destinazioni {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 140px 140px 20px 140px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .destinazioni {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+.destinazioni .box img,
+.destinazioni .box .riquadro {
   border-radius: 16px;
 }
-.destinazioni .contenitore .box img {
+@media screen and (min-width: 320px) {
+  .destinazioni .box img,
+  .destinazioni .box .riquadro {
+    border-radius: 0;
+  }
+  .destinazioni .box img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+}
+.destinazioni .box img {
   width: 100%;
 }
-.destinazioni .contenitore .box .riquadro {
+/* @media screen and (min-width: 320px) {
+  .destinazioni .box img {
+    width: 50%;
+  }
+} */
+.destinazioni .box .riquadro {
   position: absolute;
   bottom: 8px;
   background-color: black;
   padding: 20px;
 }
-.destinazioni .contenitore .box .riquadro.Roma {
+@media screen and (min-width: 320px) {
+  .destinazioni .box .riquadro {
+    position: static;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    left: 0;
+  }
+}
+.destinazioni .box .riquadro.Roma {
   bottom: 14px;
   left: 1px;
 }
-.destinazioni .contenitore .box .riquadro h2,
-.destinazioni .contenitore .box .riquadro p,
-.destinazioni .contenitore .box .riquadro span a {
+.destinazioni .box .riquadro h2,
+.destinazioni .box .riquadro p,
+.destinazioni .box .riquadro span a {
   color: white;
   margin: 18px 0;
 }
-.destinazioni .contenitore .box .riquadro h2 {
+@media screen and (min-width: 320px) {
+  .destinazioni .box .riquadro h2,
+  .destinazioni .box .riquadro p,
+  .destinazioni .box .riquadro span a {
+    margin: 14px 0;
+  }
+}
+.destinazioni .box .riquadro h2 {
   font-size: 74px;
 }
-.destinazioni .contenitore .box .riquadro p {
+.destinazioni .box .riquadro p {
   font-size: 20px;
 }
-.destinazioni .contenitore .box .riquadro span {
+.destinazioni .box .riquadro span {
   border: 4px white solid;
   padding: 4px 8px;
 }
-.destinazioni .contenitore .box .riquadro span a {
+.destinazioni .box .riquadro span a {
   font-size: 16px;
   margin-right: 6px;
+}
+@media screen and (min-width: 320px) {
+  .destinazioni .box .riquadro h2 {
+    font-size: 36px;
+  }
+  .destinazioni .box .riquadro p {
+    font-size: 18px;
+  }
+  .destinazioni .box .riquadro span a {
+    font-size: 14px;
+  }
 }
