@@ -105,7 +105,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="destinazioni">
       <div class="box">
         <img src="./assest/img/New_york.webp" alt="New York" />
@@ -148,6 +148,249 @@
             ></i>
           </span>
         </div>
+      </div>
+    </div>
+
+    <!-- preventivo -->
+     <!-- titolo -->
+    <div class="preventivo title">
+      <h2>Fai un preventivo</h2>
+    </div>
+    <!-- status -->
+    <div class="preventivo">
+      <div class="wrapper">
+        <div class="header">
+          <ul>
+            <li class="active form_1_progressbar">
+              <div>
+                <p>1</p>
+              </div>
+            </li>
+            <li class="form_2_progressbar">
+              <div>
+                <p>2</p>
+              </div>
+            </li>
+            <li class="form_3_progressbar">
+              <div>
+                <p>3</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 1° blocco -->
+        <div class="form_wrap">
+          <div class="form_1 data_info">
+            <h2>Informazioni base</h2>
+            <form>
+              <div class="form_container">
+                <!-- nome -->
+                <div class="input_wrap">
+                  <label for="nome">Nome</label>
+                  <input type="text" id="nome" />
+                </div>
+                <div class="input_wrap">
+                  <!-- cognome -->
+                  <label for="cognome">Cognome</label>
+                  <input type="text" id="cognome" />
+                </div>
+                <div class="input_wrap">
+                  <!-- Paese di destinazione -->
+                  <label>Paese di destinazione</label>
+                  <label class="tipo-selezione-label">
+                    Berlino
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="Berlino"
+                      checked
+                    />
+                  </label>
+                  <label class="tipo-selezione-label">
+                    Budapest
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="Budapest"
+                    />
+                  </label>
+                  <label class="tipo-selezione-label">
+                    Cina
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="Cina"
+                    />
+                  </label>
+                  <label class="tipo-selezione-label">
+                    New York
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="New York"
+                    />
+                  </label>
+                  <label class="tipo-selezione-label">
+                    Roma
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="Roma"
+                    />
+                  </label>
+                  <label class="tipo-selezione-label">
+                    Tokyo
+                    <input
+                      class="tipo-selezione-input"
+                      type="radio"
+                      name="type"
+                      value="Tokyo"
+                    />
+                  </label>
+                </div>
+                <div class="input_wrap">
+                  <!-- numero giorni -->
+                  <label for="giorni">Numero giorni</label>
+                  <input type="number" id="giorni" max="20" min="2" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- 2° blocco -->
+          <div class="form_2 data_info">
+            <h2>Creazione itinerario</h2>
+            <form>
+              <div class="form_container">
+                <div class="input_wrap">
+                  <!-- paese di arrivo -->
+                  <label for="arrivo">Paese di arrivo</label>
+                  <input
+                    type="text"
+                    id="arrivo"
+                    value="Roma"
+                    readonly
+                    disabled
+                  />
+                </div>
+                <div class="input_wrap">
+                  <!-- paese di partenza -->
+                  <label for="partenza">Paese di partenza</label>
+                  <input type="text" id="partenza" />
+                </div>
+                <div class="input_wrap">
+                  <!-- inizio giornata -->
+                  <label for="inizio_giornata">Inizio giornata</label>
+                  <input type="time" id="inizio_giornata" />
+                </div>
+                <div class="input_wrap">
+                  <!-- fine giornata -->
+                  <label for="fine_giornata">Fine giornata</label>
+                  <input type="time" id="fine_giornata" />
+                </div>
+                <div class="input_wrap">
+                  <!-- pranzi fuori -->
+                  <label for="pranzi_fuori">Pranzi fuori</label>
+                  <input type="number" id="pranzi_fuori" />
+                </div>
+                <div class="input_wrap">
+                  <!-- cene fuori -->
+                  <label for="cene_fuori">Cene fuori</label>
+                  <input type="number" id="cene_fuori" />
+                </div>
+                <div class="input_wrap">
+                  <!-- musei da visitare -->
+                  <label>Musei da visitare</label>
+                  <br />
+                  <label for="vaticano">Vaticano</label>
+                  <input type="checkbox" id="vaticano" />
+                  <label for="colosseo">Colosseo</label>
+                  <input type="checkbox" id="colosseo" />
+                  <label for="san_pietro">Basilica di San Pietro</label>
+                  <input type="checkbox" id="san_pietro" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- 3° blocco -->
+          <div class="form_3 data_info">
+            <h2>Spedizione itinerario</h2>
+            <form>
+              <div class="form_container">
+                <div class="input_wrap">
+                  <!-- email -->
+                  <label for="email">Email</label>
+                  <input type="email" id="email" />
+                  <!-- perchè serve l'email? -->
+                  <abbr title="invio itinerario via email"
+                    ><i
+                      class="fa-solid fa-circle-info"
+                      style="color: #1d65e2"
+                    ></i
+                  ></abbr>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="btns_wrap">
+          <div class="common_btns form_1_btns">
+            <!-- vai avanti -->
+            <button type="button" class="btn_next">
+              Avanti
+              <span class="icon">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </span>
+            </button>
+          </div>
+
+          <div class="common_btns form_2_btns">
+            <button type="button" class="btn_back">
+              <!-- vai indietro -->
+              <span class="icon">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </span>
+              Indietro
+            </button>
+            <!-- vai avanti -->
+            <button type="button" class="btn_next">
+              Avanti
+              <span class="icon">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </span>
+            </button>
+          </div>
+
+          <div class="common_btns form_3_btns">
+            <button type="button" class="btn_back">
+              <!-- vai indietro -->
+              <span class="icon">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </span>
+              Indietro
+            </button>
+            <!-- finito -->
+            <button type="button" class="btn_done">
+              Finito
+              <span class="icon"> </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_wrapper">
+      <div class="shadow"></div>
+      <div class="success_wrap">
+        <span class="modal_icon">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </span>
+        <p>Hai completato il form con successo. A breve riceverai un email!</p>
       </div>
     </div>
   </body>
