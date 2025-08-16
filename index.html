@@ -152,12 +152,14 @@
     </div>
 
     <!-- preventivo -->
-     <!-- titolo -->
+    <!-- titolo -->
     <div class="preventivo title">
       <h2>Fai un preventivo</h2>
     </div>
+    <!-- caricamento -->
+     <div id="caricamento"></div>
     <!-- status -->
-    <div class="preventivo">
+    <div class="preventivo" id="schermo">
       <div class="wrapper">
         <div class="header">
           <ul>
@@ -187,14 +189,14 @@
                 <!-- nome -->
                 <div class="input_wrap">
                   <label for="nome">Nome</label>
-                  <input type="text" id="nome" />
+                  <input type="text" id="nome" required />
                 </div>
                 <div class="input_wrap">
                   <!-- cognome -->
                   <label for="cognome">Cognome</label>
-                  <input type="text" id="cognome" />
+                  <input type="text" id="cognome" required />
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap selezionePaese">
                   <!-- Paese di destinazione -->
                   <label>Paese di destinazione</label>
                   <label class="tipo-selezione-label">
@@ -256,14 +258,14 @@
                 <div class="input_wrap">
                   <!-- numero giorni -->
                   <label for="giorni">Numero giorni</label>
-                  <input type="number" id="giorni" max="20" min="2" />
+                  <input type="number" id="giorni" max="20" min="2" required />
                 </div>
               </div>
             </form>
           </div>
           <!-- 2° blocco -->
-          <div class="form_2 data_info">
-            <h2>Creazione itinerario</h2>
+          <div class="form_2 data_info" style="display: none">
+            <h2>Viaggio</h2>
             <form>
               <div class="form_container">
                 <div class="input_wrap">
@@ -271,7 +273,7 @@
                   <label for="arrivo">Paese di arrivo</label>
                   <input
                     type="text"
-                    id="arrivo"
+                    id="paese_arrivo"
                     value="Roma"
                     readonly
                     disabled
@@ -280,68 +282,45 @@
                 <div class="input_wrap">
                   <!-- paese di partenza -->
                   <label for="partenza">Paese di partenza</label>
-                  <input type="text" id="partenza" />
+                  <input type="text" id="paese_partenza" required />
                 </div>
                 <div class="input_wrap">
-                  <!-- inizio giornata -->
-                  <label for="inizio_giornata">Inizio giornata</label>
-                  <input type="time" id="inizio_giornata" />
+                  <!-- ora partenza -->
+                  <label for="ora_partenza">Ora partenza</label>
+                  <input type="time" id="ora_partenza" required />
                 </div>
                 <div class="input_wrap">
-                  <!-- fine giornata -->
-                  <label for="fine_giornata">Fine giornata</label>
-                  <input type="time" id="fine_giornata" />
+                  <!-- ora ritorno -->
+                  <label for="ora_ritorno">Ora ritorno</label>
+                  <input type="time" id="ora_ritorno" required />
                 </div>
                 <div class="input_wrap">
                   <!-- pranzi fuori -->
-                  <label for="pranzi_fuori">Pranzi fuori</label>
-                  <input type="number" id="pranzi_fuori" />
+                  <label for="pranzi_fuori">Pranzi fuori (numero)</label>
+                  <input type="number" min="0" id="pranzi_fuori" required />
                 </div>
                 <div class="input_wrap">
                   <!-- cene fuori -->
-                  <label for="cene_fuori">Cene fuori</label>
-                  <input type="number" id="cene_fuori" />
+                  <label for="cene_fuori">Cene fuori (numero)</label>
+                  <input type="number" min="0" id="cene_fuori" required />
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap musei">
                   <!-- musei da visitare -->
                   <label>Musei da visitare</label>
-                  <br />
-                  <label for="vaticano">Vaticano</label>
-                  <input type="checkbox" id="vaticano" />
-                  <label for="colosseo">Colosseo</label>
-                  <input type="checkbox" id="colosseo" />
-                  <label for="san_pietro">Basilica di San Pietro</label>
-                  <input type="checkbox" id="san_pietro" />
+                  <div id="risultatoAI"></div>
                 </div>
               </div>
             </form>
           </div>
           <!-- 3° blocco -->
-          <div class="form_3 data_info">
-            <h2>Spedizione itinerario</h2>
-            <form>
-              <div class="form_container">
-                <div class="input_wrap">
-                  <!-- email -->
-                  <label for="email">Email</label>
-                  <input type="email" id="email" />
-                  <!-- perchè serve l'email? -->
-                  <abbr title="invio itinerario via email"
-                    ><i
-                      class="fa-solid fa-circle-info"
-                      style="color: #1d65e2"
-                    ></i
-                  ></abbr>
-                </div>
-              </div>
-            </form>
+          <div class="form_3 data_info" style="display: none">
           </div>
         </div>
 
         <div class="btns_wrap">
           <div class="common_btns form_1_btns">
             <!-- vai avanti -->
-            <button type="button" class="btn_next">
+            <button type="submit" class="btn_next">
               Avanti
               <span class="icon">
                 <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -349,8 +328,8 @@
             </button>
           </div>
 
-          <div class="common_btns form_2_btns">
-            <button type="button" class="btn_back">
+          <div class="common_btns form_2_btns" style="display: none">
+            <button type="submit" class="btn_back">
               <!-- vai indietro -->
               <span class="icon">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -358,7 +337,7 @@
               Indietro
             </button>
             <!-- vai avanti -->
-            <button type="button" class="btn_next">
+            <button type="submit" class="btn_next">
               Avanti
               <span class="icon">
                 <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -366,8 +345,8 @@
             </button>
           </div>
 
-          <div class="common_btns form_3_btns">
-            <button type="button" class="btn_back">
+          <div class="common_btns form_3_btns" style="display: none">
+            <button type="submit" class="btn_back">
               <!-- vai indietro -->
               <span class="icon">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -375,7 +354,7 @@
               Indietro
             </button>
             <!-- finito -->
-            <button type="button" class="btn_done">
+            <button type="submit" class="btn_done">
               Finito
               <span class="icon"> </span>
             </button>
@@ -388,10 +367,13 @@
       <div class="shadow"></div>
       <div class="success_wrap">
         <span class="modal_icon">
-          <ion-icon name="checkmark-outline"></ion-icon>
+          <i class="fa-solid fa-check" style="color: #000000"></i>
         </span>
-        <p>Hai completato il form con successo. A breve riceverai un email!</p>
+        <p>Form completato con successo!</p>
       </div>
     </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
   </body>
 </html>
