@@ -192,7 +192,8 @@ function riepilogo(musei) {
     contenitore.innerHTML += `
       <div class="box">
         <label for="museo">museo n° ${cont}</label>
-        <input type="text" value="${musei[i]}" readonly disabled />
+        <br>
+        <textarea readonly disabled>${musei[i]}"</textarea>
       </div>
       `;
     cont++;

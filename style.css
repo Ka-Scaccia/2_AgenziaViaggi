@@ -273,24 +273,52 @@ header ul li a:hover:after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+}
+@media screen and (min-width: 320px) {
+  .preventivo {
+    margin: 0 0 40px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .preventivo {
+    margin-bottom: 40px;
+  }
 }
 .preventivo.title {
   color: rgb(182, 182, 21);
-  font-size: 24px;
   background-color: white;
   padding: 10px 20px;
   font-style: italic;
   text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (min-width: 320px) {
+  .preventivo.title {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .preventivo.title {
+    font-size: 24px;
+  }
 }
 .wrapper {
   width: 750px;
-  max-width: 100%;
   background-color: white;
   margin: 40px auto 0;
   padding: 50px;
   border-radius: 5px;
   border: 3px solid black;
+}
+@media screen and (min-width: 320px) {
+  .wrapper {
+    max-width: 84%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    max-width: 100%;
+  }
 }
 .form_3 {
   display: flex;
@@ -299,14 +327,34 @@ header ul li a:hover:after {
   gap: 10px;
   text-align: center;
 }
+@media screen and (min-width: 320px) {
+  .form_3 .box {
+    display: flex;
+  }
+}
 .form_3 label {
-  font-size: 20px;
   margin: 0 8px;
+}
+@media screen and (min-width: 320px) {
+  .form_3 label {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form_3 label {
+    font-size: 20px;
+  }
 }
 .form_3 input {
   padding: 6px;
   border: none;
   width: 60%;
+}
+.form_3 .box textarea {
+  padding: 6px;
+  margin: 10px;
+  width: 100%;
+  height: 80px;
 }
 .form_3 .form_container .input_wrap abbr svg {
   margin-top: 4px;
@@ -318,6 +366,7 @@ header ul li a:hover:after {
 }
 .wrapper .header ul {
   display: flex;
+  margin: 0 auto;
 }
 .wrapper .header ul li {
   position: relative;
@@ -344,13 +393,25 @@ header ul li a:hover:after {
   border-radius: 50%;
 }
 .wrapper .header ul li p {
-  width: 50px;
-  height: 50px;
   background-color: black;
   color: white;
   text-align: center;
   line-height: 50px;
-  border-radius: 50%;
+}
+@media screen and (min-width: 320px) {
+  .wrapper .header ul li p {
+    width: 40px;
+    height: 44px;
+    border-radius: 42%;
+    margin: 0 2px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapper .header ul li p {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 }
 .wrapper .header ul li.active:before,
 .wrapper .header ul li.active p {
@@ -365,6 +426,16 @@ header ul li a:hover:after {
   text-transform: uppercase;
   margin-bottom: 20px;
   text-decoration: underline;
+}
+@media screen and (min-width: 320px) {
+  .wrapper .form_wrap h2 {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .wrapper .form_wrap h2 {
+    font-size: 20px;
+  }
 }
 .wrapper .form_wrap .input_wrap {
   width: 350px;
@@ -417,7 +488,16 @@ header ul li a:hover:after {
 .wrapper .form_wrap .input_wrap label {
   display: block;
   margin-bottom: 5px;
-  font-size: 20px;
+}
+@media screen and (min-width: 320px) {
+  .wrapper .form_wrap .input_wrap label {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapper .form_wrap .input_wrap label {
+    font-size: 20px;
+  }
 }
 .wrapper .form_wrap .input_wrap input {
   border: 2px solid black;
@@ -454,6 +534,7 @@ header ul li a:hover:after {
   border-radius: 3px;
   transition: 0.5s ease;
   cursor: pointer;
+  margin: 0 4px;
 }
 .wrapper .btns_wrap .common_btns button.btn_back {
   background: rgb(182, 182, 21);
@@ -505,7 +586,6 @@ header ul li a:hover:after {
 }
 .modal_wrapper .success_wrap .modal_icon {
   margin-right: 20px;
-  width: 50px;
   height: 50px;
   background-color: yellow;
   color: white;
@@ -515,6 +595,16 @@ header ul li a:hover:after {
   justify-content: center;
   font-size: 32px;
   font-weight: 700;
+}
+@media screen and (min-width: 320px) {
+  .modal_wrapper .success_wrap .modal_icon {
+    width: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal_wrapper .success_wrap .modal_icon {
+    width: 50px;
+  }
 }
 .modal_wrapper.active {
   visibility: visible;
@@ -536,7 +626,7 @@ header ul li a:hover:after {
 }
 #caricamento #loading {
   font-size: 40px;
-  margin: 380px 0;
+  margin: 340px 0;
   padding: 0;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -544,7 +634,11 @@ header ul li a:hover:after {
   position: relative;
   animation: pulsate 1.5s infinite ease-in-out;
 }
-
+@media screen and (min-width: 320px) {
+  #caricamento #loading {
+    font-size: 24px;
+  }
+}
 @keyframes pulsate {
   0% {
     opacity: 0.5;
