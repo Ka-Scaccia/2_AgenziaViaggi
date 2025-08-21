@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
   // periodo Tokyo: marzo-maggio e settembre-novembre
 
   // Budapest e New York coincidono
-  const paginaAttuale = window.location.href;
+  const paginaAttuale = window.location.href.split("#")[0]; 
   const pageBerlino = "http://127.0.0.1:5500/mete/berlino.html";
 
   // CASO BERLINO
@@ -19,6 +19,14 @@ window.addEventListener("load", function () {
     if (mese >= 5 && mese <= 9) {
       let sconto = this.document.getElementById("sconto");
       sconto.innerHTML = "Se prenoti oggi risparmi il 50%!";
+      console.log("Sconto Berlino applicato");
+
+      // modifico prezzo per 7 e 14 giorni
+      let prezzo7 = this.document.getElementById("prezzo7");
+      prezzo7.innerHTML = "Costo totale: 212 euro (SCONTO)";
+
+      let prezzo14 = this.document.getElementById("prezzo14");
+      prezzo14.innerHTML = "Costo totale: 250 euro (SCONTO)";
     }
   }
 });
