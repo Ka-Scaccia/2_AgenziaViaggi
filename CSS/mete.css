@@ -137,6 +137,11 @@ header ul li a:hover:after {
   position: relative;
   z-index: -1;
 }
+@media screen and (min-width: 320px) {
+  .video video {
+    object-fit: cover;
+  }
+}
 .video h1,
 .video h2,
 .video h3,
@@ -173,6 +178,68 @@ header ul li a:hover:after {
   border-radius: 16px;
   cursor: pointer;
 }
+@media screen and (min-width: 320px) {
+  .video h1 {
+    font-size: 48px;
+    left: 20px;
+    margin-top: 120px;
+  }
+  .video h2 {
+    font-size: 18px;
+    left: 20px;
+    margin-top: 200px;
+  }
+  .video h3 {
+    font-size: 28px;
+    left: 20px;
+    margin-top: 240px;
+  }
+  .video a {
+    font-size: 16px;
+    left: 20px;
+    margin-top: 310px;
+    padding: 8px 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .video h1 {
+    font-size: 68px;
+  }
+  .video h2 {
+    font-size: 20px;
+    top: 82px;
+  }
+  .video h3 {
+    font-size: 30px;
+  }
+  .video a {
+    font-size: 18px;
+    top: 42px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .video h1 {
+    left: 154px;
+    margin-top: 180px;
+    font-size: 86px;
+  }
+  .video h2 {
+    left: 154px;
+    margin-top: 300px;
+    font-size: 24px;
+  }
+  .video h3 {
+    left: 154px;
+    margin-top: 340px;
+    font-size: 38px;
+  }
+  .video a {
+    left: 154px;
+    top: 60px;
+    margin-top: 400px;
+    font-size: 20px;
+  }
+}
 .video a:hover {
   text-decoration: underline;
 }
@@ -184,6 +251,11 @@ header ul li a:hover:after {
   text-align: center;
   justify-content: center;
 }
+@media screen and (min-width: 320px) {
+  .flex {
+    margin-top: 100px;
+  }
+}
 .flex h2 {
   color: #d6c422;
   font-size: 44px;
@@ -192,24 +264,61 @@ header ul li a:hover:after {
 .contenuto_viaggio {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+}
+@media screen and (min-width: 320px) {
+  .contenuto_viaggio {
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contenuto_viaggio {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 280px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contenuto_viaggio {
+    justify-content: space-evenly;
+  }
 }
 .contenuto_viaggio .box {
-  width: 20%;
   height: auto;
   background-color: #d6c422;
   text-align: center;
   border-radius: 16px;
+  padding: 0 16px;
+  overflow: auto;
 }
-.contenuto_viaggio .box1 {
-  max-height: 1040px;
+.contenuto_viaggio .box p,
+.contenuto_viaggio .box {
+  border-radius: 16px;
 }
-.contenuto_viaggio .box2 {
-  max-height: 1820px;
+@media screen and (min-width: 320px) {
+  .contenuto_viaggio .box {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contenuto_viaggio .box {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contenuto_viaggio .box {
+    width: 20%;
+  }
 }
 .contenuto_viaggio .box3 {
-  max-height: 120px;
+  max-height: 140px;
+}
+@media screen and (min-width: 320px) {
+  .contenuto_viaggio .box3 {
+    padding: 16px;
+  }
 }
 .contenuto_viaggio .box h3 {
   margin: 20px 0;
@@ -252,6 +361,11 @@ header ul li a:hover:after {
   rotate: 90deg;
   border-style: dashed;
   border-width: 1px;
+}
+@media screen and (min-width: 320px) {
+  .contenitore span {
+    display: none;
+  }
 }
 /* FOOTER */
 footer {
@@ -318,4 +432,8 @@ footer .box img {
   right: 10px;
   bottom: 20px;
 }
-
+@media screen and (min-width: 320px) {
+  .freccia {
+    display: none;
+  }
+}
