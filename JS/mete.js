@@ -14,6 +14,7 @@ window.addEventListener("load", function () {
   const paginaAttuale = window.location.href.split("#")[0];
   const pageBerlino = "http://127.0.0.1:5500/mete/berlino.html";
   const pageBudapest = "http://127.0.0.1:5500/mete/budapest.html";
+  const pageCina = "http://127.0.0.1:5500/mete/cina.html";
 
   // CASO BERLINO
   if (paginaAttuale === pageBerlino) {
@@ -45,4 +46,21 @@ window.addEventListener("load", function () {
       prezzo14.innerHTML = "Costo totale: 200 euro (SCONTO)";
     }
   }
+
+  // CASO CINA
+  if (paginaAttuale === pageCina) {
+    if (mese === 4 || mese === 5 || mese === 9 || mese === 10) {
+      let sconto = this.document.getElementById("sconto");
+      sconto.innerHTML = "Se prenoti oggi risparmi il 50%!";
+      console.log("Sconto Cina applicato");
+
+      // modifico prezzo per 7 e 14 giorni
+      let prezzo7 = this.document.getElementById("prezzo7");
+      prezzo7.innerHTML = "Costo totale: 162 euro (SCONTO)";
+
+      let prezzo14 = this.document.getElementById("prezzo14");
+      prezzo14.innerHTML = "Costo totale: 200 euro (SCONTO)";
+    }
+  }
+
 });
