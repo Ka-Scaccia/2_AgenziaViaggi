@@ -17,6 +17,7 @@ window.addEventListener("load", function () {
   const pageCina = "http://127.0.0.1:5500/mete/cina.html";
   const pageNewYork = "http://127.0.0.1:5500/mete/newyork.html";
   const pageRoma = "http://127.0.0.1:5500/mete/roma.html";
+  const pageTokyo = "http://127.0.0.1:5500/mete/tokyo.html";
 
   // CASO BERLINO
   if (paginaAttuale === pageBerlino) {
@@ -84,6 +85,22 @@ window.addEventListener("load", function () {
 
       let prezzo14 = this.document.getElementById("prezzo14");
       prezzo14.innerHTML = "Costo totale: 185 euro (SCONTO)";
+    }
+  }
+
+  // CASO TOKYO
+  if (paginaAttuale == pageTokyo) {
+    if(mese === 3 || mese === 5 || mese === 9 || mese === 11) {
+      let sconto = this.document.getElementById("sconto");
+      sconto.innerHTML = "Se prenoti oggi risparmi il 50%!";
+      console.log("Sconto Cina applicato");
+
+      // modifico prezzo per 7 e 14 giorni
+      let prezzo7 = this.document.getElementById("prezzo7");
+      prezzo7.innerHTML = "Costo totale: 550 euro (SCONTO)";
+
+      let prezzo14 = this.document.getElementById("prezzo14");
+      prezzo14.innerHTML = "Costo totale: 700 euro (SCONTO)";
     }
   }
 });
