@@ -1,16 +1,16 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", async function () {
   // ottengo il mese attuale
   const oggi = new Date();
   const mese = oggi.getMonth() + 1;
 
-  // periodo Berlino: maggio-settembre
-  // periodo Budapest: aprile-giugno e settembre-ottobre
-  // periodo Cina: aprile-maggio e settembre-ottobre
-  // periodo New York: aprile-giugno e settembre-ottobre
-  // periodo Roma: aprile-maggio e settembre-ottobre
-  // periodo Tokyo: marzo-maggio e settembre-novembre
+  // contenitore mete
+  const contBudapest = this.document.getElementById("contBudapest");
+  const contCina = this.document.getElementById("contCina");
+  const contNY = this.document.getElementById("contNY");
+  const contRoma = this.document.getElementById("contRoma");
+  const contTokyo = this.document.getElementById("contTokyo");
 
-  // Budapest e New York coincidono
+  // link pagine
   const paginaAttuale = window.location.href.split("#")[0];
   const pageBerlino = "http://127.0.0.1:5500/mete/berlino.html";
   const pageBudapest = "http://127.0.0.1:5500/mete/budapest.html";
@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
   // CASO BERLINO
   if (paginaAttuale === pageBerlino) {
     if (mese >= 5 && mese <= 9) {
-      let sconto = this.document.getElementById("sconto");
+      let sconto = document.getElementById("sconto");
       sconto.innerHTML = "Se prenoti oggi risparmi il 50%!";
       console.log("Sconto Berlino applicato");
 
@@ -90,7 +90,7 @@ window.addEventListener("load", function () {
 
   // CASO TOKYO
   if (paginaAttuale == pageTokyo) {
-    if(mese === 3 || mese === 5 || mese === 9 || mese === 11) {
+    if (mese === 3 || mese === 5 || mese === 9 || mese === 11) {
       let sconto = this.document.getElementById("sconto");
       sconto.innerHTML = "Se prenoti oggi risparmi il 50%!";
       console.log("Sconto Cina applicato");
